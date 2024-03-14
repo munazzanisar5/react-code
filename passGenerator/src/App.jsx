@@ -1,7 +1,6 @@
 import { useState , useCallback, useEffect, useRef } from 'react'
 
 
-
 function App() {
   const [length, setlength] = useState(8)
   const [numberAllowed, setNumberAllowed] = useState(false)
@@ -15,11 +14,9 @@ function App() {
     let pass= ""
     let str="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
   
-    
     if(numberAllowed) str += "0123456789"
-    
     if(charAllowed) str += "/^[a-zA-Z0-9,.!?]*$/"
-    console.log(str)
+   
     
     for (let i = 1; i <=length; i++) {
       console.log(Math.random());
