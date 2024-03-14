@@ -1,6 +1,6 @@
 import { useState , useCallback, useEffect, useRef } from 'react'
 
-import './App.css'
+
 
 function App() {
   const [length, setlength] = useState(8)
@@ -14,14 +14,18 @@ function App() {
   const passwordGenerator = useCallback(()=>{
     let pass= ""
     let str="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
-
+  
+    
     if(numberAllowed) str += "0123456789"
+    
     if(charAllowed) str += "/^[a-zA-Z0-9,.!?]*$/"
-
+    console.log(str)
+    
     for (let i = 1; i <=length; i++) {
+      console.log(Math.random());
       let char = Math.floor(Math.random() * str.length + 1)
       pass += str.charAt(char)
-      
+      console.log(pass);
     }
     setPassword(pass)
 
@@ -61,7 +65,7 @@ function App() {
           <div className='flex items-center gap-x-1'>
             <input 
             type="range"
-            min={6}
+            min={8}
             max={100}
             value={length}
             className='cursor-pointer'
